@@ -11,5 +11,11 @@ const sequelize = new Sequelize(
 CountryModel(sequelize);
 ActivityModel(sequelize);
 
-const { Recipes, Diets } = sequelize.models;
-module.exports = { sequelize };
+const { Country, Activity } = sequelize.models;
+
+console.log(sequelize.models);
+
+Country.belongsToMany(Activity, { through: "CountryActivities" });
+Activity.belongsToMany(Country, { through: "CountryActivities" });
+
+module.exports = { sequelize, Country, Activity };
