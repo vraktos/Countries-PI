@@ -1,23 +1,30 @@
-const getCountryByIdHandler = (req, res) => {
+const {
+  getCountriesController,
+  postCountriesController,
+  getCountryByQueryController,
+  getCountryByIdController,
+} = require("../controllers/countriesControllers");
+
+const getCountryByIdHandler = async (req, res) => {
   const { id } = req.params;
-  console.log(id);
-  res
-    .status(200)
-    .send(
-      `Esta ruta devuelve el detalle del pais de id ${id} mas las actividades turisticas`
-    );
+  const country = await getCountryByIdController(id);
+  res.status(200).json(country);
 };
 
-const getCountriesHandler = (req, res) => {
+const getCountriesHandler = async (req, res) => {
   const { name } = req.query;
   if (name) {
-    res.status(200).send(name);
+    const countrie = await getCountryByQueryController(name);
+    res.status(200).json(countrie);
   } else {
-    res
-      .status(200)
-      .send(
-        "Obtiene un arreglo de objetos, donde cada objeto es un país con toda su información."
-      );
+    try {
+      const countries = await getCountriesController();
+      postCountriesController(countries);
+
+      res.status(201).send("countries posted on db");
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
   }
 };
 

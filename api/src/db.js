@@ -12,8 +12,11 @@ CountryModel(sequelize);
 ActivityModel(sequelize);
 
 const { Country, Activity } = sequelize.models;
-
-console.log(sequelize.models);
+const CountryActivities = sequelize.define(
+  "CountryActivities",
+  {},
+  { timestamps: false }
+);
 
 Country.belongsToMany(Activity, { through: "CountryActivities" });
 Activity.belongsToMany(Country, { through: "CountryActivities" });

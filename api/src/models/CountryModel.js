@@ -8,6 +8,7 @@ module.exports = (sequelize) => {
         type: DataTypes.CHAR(3),
         primaryKey: true,
         allowNull: false,
+        defaultValue: "UND",
       },
       name: {
         type: DataTypes.TEXT,
@@ -24,6 +25,7 @@ module.exports = (sequelize) => {
       capital: {
         type: DataTypes.TEXT,
         allowNull: false,
+        defaultValue: "Unknown",
       },
       subregion: {
         type: DataTypes.TEXT,
@@ -31,15 +33,14 @@ module.exports = (sequelize) => {
         defaultValue: "Not specified",
       },
       area: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: true,
-        defaultValue: "Not specified",
       },
       population: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
     },
-    { timestamps: false }
+    { timestamps: false, charset: "utf8", collate: "utf8_unicode_ci" }
   );
 };
