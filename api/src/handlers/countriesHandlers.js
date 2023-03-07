@@ -6,16 +6,24 @@ const {
 } = require("../controllers/countriesControllers");
 
 const getCountryByIdHandler = async (req, res) => {
-  const { id } = req.params;
-  const country = await getCountryByIdController(id);
-  res.status(200).json(country);
+  try {
+    const { id } = req.params;
+    const country = await getCountryByIdController(id);
+    res.status(200).json(country);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 };
 
 const getCountriesHandler = async (req, res) => {
   const { name } = req.query;
   if (name) {
-    const countrie = await getCountryByQueryController(name);
-    res.status(200).json(countrie);
+    try {
+      const countrie = await getCountryByQueryController(name);
+      res.status(200).json(countrie);
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
   } else {
     try {
       const countries = await getCountriesController();
