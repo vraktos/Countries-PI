@@ -19,17 +19,15 @@ const getCountriesHandler = async (req, res) => {
   const { name } = req.query;
   if (name) {
     try {
-      const countrie = await getCountryByQueryController(name);
-      res.status(200).json(countrie);
+      const country = await getCountryByQueryController(name);
+      res.status(200).json(country);
     } catch (error) {
       res.status(400).json({ error: error.message });
     }
   } else {
     try {
       const countries = await getCountriesController();
-      postCountriesController(countries);
-
-      res.status(201).send("countries posted on db");
+      res.status(201).json(countries);
     } catch (error) {
       res.status(400).json({ error: error.message });
     }

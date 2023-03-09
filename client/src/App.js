@@ -4,13 +4,15 @@ import NavBar from "./Components/NavBar/NavBar";
 
 function App() {
   const location = useLocation();
+  const id = location.pathname.substr(8);
   return (
     <div className="App">
       {location.pathname !== "/" && <NavBar />}
+
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route exact path="/" element={<Landing />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route path={"/detail/" + id} element={<Detail />}></Route>
         <Route exact path="/create" element={<Form />} />
       </Routes>
     </div>

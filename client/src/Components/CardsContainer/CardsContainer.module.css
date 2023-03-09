@@ -1,0 +1,7 @@
+.cardsContainer {
+ border: 1px solid magenta;
+ display: flex;
+ flex-direction: row;
+ border-radius: 15px;
+ flex-wrap: wrap;
+}

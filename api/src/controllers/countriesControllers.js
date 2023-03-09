@@ -2,7 +2,7 @@ const axios = require("axios");
 const { Country, Activity } = require("../db");
 const { Op } = require("sequelize");
 
-const getCountriesController = async () => {
+const getCountriesFromApi = async () => {
   const rawData = (await axios.get("https://restcountries.com/v3/all")).data;
 
   const countries = rawData.map((countrie) => {
@@ -17,6 +17,14 @@ const getCountriesController = async () => {
       area: countrie.area,
       population: countrie.population,
     };
+  });
+  return countries;
+};
+
+const getCountriesController = async () => {
+  const rawCountries = await Country.findAll();
+  const countries = rawCountries.map((country) => {
+    return country.dataValues;
   });
   return countries;
 };
@@ -48,6 +56,7 @@ const getCountryByIdController = async (id) => {
 };
 
 module.exports = {
+  getCountriesFromApi,
   getCountriesController,
   postCountriesController,
   getCountryByQueryController,

@@ -1,37 +1,20 @@
+import { useSelector } from "react-redux";
 import Card from "../Card/Card";
+import style from "./CardsContainer.module.css";
 
 const CardsContainer = () => {
-  const countries = [
-    {
-      id: "CHL",
-      name: "Chile",
-      flagImg: "https://flagcdn.com/w320/cl.png",
-      continent: "South America",
-      capital: "Santiago",
-      subregion: "South America",
-      area: 756102,
-      population: 19116209,
-    },
-    {
-      id: "ARG",
-      name: "Argentina",
-      flagImg: "https://flagcdn.com/w320/ar.png",
-      continent: "South America",
-      capital: "Buenos Aires",
-      subregion: "South America",
-      area: 2780400,
-      population: 45376763,
-    },
-  ];
+  const countries = useSelector((state) => state.countries);
 
   return (
-    <div>
+    <div className={style.cardsContainer}>
       {countries.map((country) => {
         return (
           <Card
+            id={country.id}
             flagImg={country.flagImg}
             name={country.name}
             continent={country.continent}
+            key={country.id}
           />
         );
       })}
