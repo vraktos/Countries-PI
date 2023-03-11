@@ -22,7 +22,7 @@ const postActivitieHandler = async (req, res) => {
       season,
       countries
     );
-    res.status(201).json(newActivity);
+    res.status(201).send(`You've created the activity: ${newActivity.name}`);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

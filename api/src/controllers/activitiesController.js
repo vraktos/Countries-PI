@@ -13,8 +13,8 @@ const postActivityController = async (
     duration,
     season,
   });
-  const arrCountries = countries.split(",");
-  newActivity.addCountry([...arrCountries]);
+  //const arrCountries = countries.split(",");
+  newActivity.addCountry([...countries]);
   return newActivity;
 };
 
