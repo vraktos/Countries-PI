@@ -1,4 +1,4 @@
-const { Activity } = require("../db");
+const { Activity, Country } = require("../db");
 
 const postActivityController = async (
   name,
@@ -19,7 +19,14 @@ const postActivityController = async (
 };
 
 const getActivitiesController = async () => {
-  const rawActivities = await Activity.findAll();
+  const rawActivities = await Activity.findAll({
+    include: [
+      {
+        model: Country,
+        through: { attributes: ["CountryId"] },
+      },
+    ],
+  });
   //console.log(rawActivities);
   const cleanAct = rawActivities.map((act) => {
     return act.dataValues;

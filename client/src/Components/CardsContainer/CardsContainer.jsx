@@ -3,11 +3,14 @@ import Card from "../Card/Card";
 import style from "./CardsContainer.module.css";
 
 const CardsContainer = () => {
-  const countries = useSelector((state) => state.countries);
+  const countries = useSelector((state) => state.searchResults);
+  console.log(countries.length);
+  const currentPage = useSelector((state) => state.currentPage);
+  const current10 = countries.slice(currentPage, +currentPage + 10);
 
   return (
     <div className={style.cardsContainer}>
-      {countries.map((country) => {
+      {current10.map((country) => {
         return (
           <Card
             id={country.id}
