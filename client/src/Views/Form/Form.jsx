@@ -23,7 +23,15 @@ const Form = () => {
     e.preventDefault();
     axios
       .post("http://localhost:3001/activities", form)
-      .then((res) => alert(res.data));
+      .then((res) => alert(res.data))
+      .catch((error) => console.log(error.message));
+    setForm({
+      name: "",
+      dificulty: "",
+      duration: "",
+      season: "",
+      countries: [],
+    });
   };
 
   const validate = (form) => {};
@@ -59,6 +67,9 @@ const Form = () => {
           onChange={changeHandler}
           name="dificulty"
         >
+          <option value="" key={""}>
+            {" "}
+          </option>
           <option value="1" key={"1"}>
             {" "}
             1{" "}
@@ -99,6 +110,9 @@ const Form = () => {
           onChange={changeHandler}
           name="season"
         >
+          <option value="" key={""}>
+            {" "}
+          </option>
           <option value="Spring" key={"Spring"}>
             {" "}
             Spring{" "}

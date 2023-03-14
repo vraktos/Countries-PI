@@ -23,7 +23,7 @@ const Detail = () => {
           id={country.id}
           name={country.name}
           flagImg={country.flagImg}
-          continent={country.contient}
+          continent={country.continent}
           capital={country.capital}
           subregion={country.subregion}
           area={country.area}

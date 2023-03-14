@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { postSearchResults } from "../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { postSearchResults, changePage } from "../../redux/actions";
+import style from "./Filters.module.css";
 
 const Filters = () => {
   const dispatch = useDispatch();
@@ -64,11 +64,12 @@ const Filters = () => {
     }
 
     dispatch(postSearchResults(searchResults));
+    dispatch(changePage(0));
   };
 
   return (
     <div>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} className={style.form}>
         <div>
           <label> Select an activity</label>
           <select

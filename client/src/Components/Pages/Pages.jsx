@@ -1,9 +1,16 @@
-import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { changePage } from "../../redux/actions";
 
 const Pages = () => {
   const dispatch = useDispatch();
+  const results = useSelector((state) => state.searchResults);
+  const pagesAmount = Math.floor(results.length / 10);
+  console.log(pagesAmount);
+  const buttonsArr = [];
+
+  for (let i = 2; i < pagesAmount + 1; i++) {
+    buttonsArr.push({ name: i, value: (i - 1) * 10 });
+  }
 
   const clickHandler = (e) => {
     dispatch(changePage(e.target.value));
@@ -14,7 +21,20 @@ const Pages = () => {
       <button name="1" value="0" onClick={clickHandler}>
         1
       </button>
-      <button name="2" value="10" onClick={clickHandler}>
+      {buttonsArr.map((button) => {
+        return (
+          <button
+            name={button.name}
+            value={button.value}
+            key={button.name}
+            onClick={clickHandler}
+          >
+            {" "}
+            {button.name}{" "}
+          </button>
+        );
+      })}
+      {/* <button name="2" value="10" onClick={clickHandler}>
         2
       </button>
       <button name="3" value="20" onClick={clickHandler}>
@@ -85,7 +105,7 @@ const Pages = () => {
       </button>
       <button name="25" value="240" onClick={clickHandler}>
         25
-      </button>
+      </button> */}
     </div>
   );
 };

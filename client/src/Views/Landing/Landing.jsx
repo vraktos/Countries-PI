@@ -1,14 +1,23 @@
-import { Link } from "react-router-dom";
+import style from "./Landing.module.css";
 
 const Landing = () => {
   return (
-    <>
-      <h1> Esta es la vista de Landing</h1>
-      <button>
+    <div className={style.landing}>
+      <div className={style.welcome}>
         {" "}
-        <Link to="/home"> Home</Link>
-      </button>
-    </>
+        Welcome to Countries of the World
+        <button
+          className={style.homeButton}
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.href = "http://localhost:3000/home";
+          }}
+        >
+          {" "}
+          Home{" "}
+        </button>{" "}
+      </div>
+    </div>
   );
 };
 

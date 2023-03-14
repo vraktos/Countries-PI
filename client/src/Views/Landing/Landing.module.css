@@ -1,0 +1,88 @@
+.landing {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+}
+
+.homeButton {
+    display: flex;
+    width: 10%;
+    justify-content: center;
+    justify-self: center;
+    background: rgba(250,235,215,0.7);
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  color: #4066e2;
+  cursor: pointer;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 20%;
+}
+
+.homeButton:after {
+  background-clip: padding-box;
+  background: rgba(250,235,215,0.3);
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+
+.homeButton:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+    
+.welcome {
+    display: grid;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    
+    background: rgba(250,235,215,0.7);
+    justify-items: center;
+    justify-content: center;
+    padding: 25px;
+    border-radius: 15px;
+    font-size:2.5em;
+    margin-top: 200px;
+    align-content: center;
+   
+}
+
+
+html { 
+    
+    background: url("../../../images/Landing-background.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
