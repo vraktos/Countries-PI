@@ -69,11 +69,11 @@ const Filters = () => {
 
   return (
     <div>
-      <form onSubmit={submitHandler} className={style.form}>
-        <div>
+      <form onSubmit={submitHandler} className={style.formContainer}>
+        <div className={style.selector}>
           <label> Select an activity</label>
           <select
-            placeholder="Activities..."
+            className={style.options}
             value={filter.activity}
             onChange={changeHandler}
             name="activity"
@@ -85,9 +85,10 @@ const Filters = () => {
           </select>
         </div>
 
-        <div>
+        <div className={style.selector}>
           <label> Select continent</label>
           <select
+            className={style.options}
             value={filter.continent}
             onChange={changeHandler}
             name="continent"
@@ -99,7 +100,9 @@ const Filters = () => {
             })}
           </select>
         </div>
-        <button type="submit">Search</button>
+        <button className={style.options} type="submit">
+          Search
+        </button>
       </form>
     </div>
   );

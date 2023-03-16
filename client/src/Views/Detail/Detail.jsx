@@ -17,7 +17,6 @@ const Detail = () => {
 
   return (
     <>
-      <h1> Esta es la vista de Detail</h1>
       {country.id ? (
         <DetailCard
           id={country.id}
@@ -28,7 +27,11 @@ const Detail = () => {
           subregion={country.subregion}
           area={country.area}
           population={country.population}
-          activities={country.Activities}
+          activities={
+            country.Activities.length > 0
+              ? country.Activities
+              : "no activity related"
+          }
         />
       ) : (
         <span> Loading... </span>

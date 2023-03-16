@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 600px;
+    background: rgba(250,235,215,0.9);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 70px;    align-items: center;
+    font-family: 'Lora', serif;
+    
+}
+span {
+    color: red;
+    font-style: italic;
+}
+
+.selector {
+    font-family: 'Lora', serif;
+    border-radius: 5px;
+}
+
+.countriesContainer {
+    align-items: center;
+    
+    display: flex;
+}

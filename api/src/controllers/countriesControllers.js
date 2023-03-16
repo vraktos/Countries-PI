@@ -6,7 +6,6 @@ const getCountriesFromApi = async () => {
   const rawData = (await axios.get("https://restcountries.com/v3/all")).data;
 
   const countries = rawData.map((countrie) => {
-    //console.log(countrie.capital);
     return {
       id: countrie.cca3,
       name: countrie.name.common,

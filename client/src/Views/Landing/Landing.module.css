@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 .landing {
     display: flex;
     justify-content: center;
     justify-items: center;
     justify-self: center;
+    font-family: 'Lobster', cursive;
+    font-size: larger;
 }
 
 .homeButton {

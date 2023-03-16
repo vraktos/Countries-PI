@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { changePage } from "../../redux/actions";
+import style from "./Pages.module.css";
 
 const Pages = () => {
   const dispatch = useDispatch();
@@ -18,12 +19,13 @@ const Pages = () => {
 
   return (
     <div>
-      <button name="1" value="0" onClick={clickHandler}>
+      <button className={style.pages} name="1" value="0" onClick={clickHandler}>
         1
       </button>
       {buttonsArr.map((button) => {
         return (
           <button
+            className={style.pages}
             name={button.name}
             value={button.value}
             key={button.name}

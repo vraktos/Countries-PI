@@ -5,15 +5,17 @@ const Card = (props) => {
   return (
     <div className={style.card}>
       <p>
-        Name: <Link to={"/detail/" + props.id}>{props.name} </Link>
+        <Link to={"/detail/" + props.id} className={style.link}>
+          {props.name}{" "}
+        </Link>
       </p>
       {/* <p>Name: {props.name}</p> */}
 
       <p>
         {" "}
-        Flag: <img src={props.flagImg} alt={props.name + "flag"} />
+        <img src={props.flagImg} alt={props.name + "flag"} />
       </p>
-      <p>Continent: {props.continent}</p>
+      <p className={style.link}>{props.continent}</p>
     </div>
   );
 };

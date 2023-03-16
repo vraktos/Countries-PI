@@ -19,7 +19,7 @@ const Home = () => {
   }, []);
 
   return (
-    <>
+    <div className={style.homeContainer}>
       <div className={style.filtersContainer}>
         <Sorter />
         <SearchBar />
@@ -27,7 +27,7 @@ const Home = () => {
       </div>
       <CardsContainer />
       <Pages />
-    </>
+    </div>
   );
 };
 

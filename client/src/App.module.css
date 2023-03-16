@@ -1,5 +1,8 @@
 .app {
-    display:grid;
+    display:flex;
     justify-items: center;
     justify-content: center;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
 }

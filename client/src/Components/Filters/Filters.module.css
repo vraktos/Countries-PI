@@ -1,4 +1,19 @@
-form {
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
+
+.formContainer {
     display: flex;
     flex-direction: row;
+    gap: 10px;
+    font-family: 'Lora', serif;
+}
+.selector {
+    display: flex;
+    
+}
+
+.options {
+   
+        font-family: 'Lora', serif;
+        border-radius: 5px;
+        
 }

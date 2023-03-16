@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { postSearchResults } from "../../redux/actions";
+import style from "./Sorter.module.css";
 
 const Sorter = () => {
   const countries = useSelector((state) => state.searchResults);
@@ -38,8 +39,8 @@ const Sorter = () => {
   };
 
   return (
-    <div>
-      <label> Sort By </label>
+    <div className={style.sorterContainer}>
+      <label> Sort By: </label>
       <form onSubmit={sortHandler}>
         <select onChange={sortHandler}>
           <option></option>

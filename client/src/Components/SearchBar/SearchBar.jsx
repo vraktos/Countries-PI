@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { searchCountry } from "../../redux/actions";
+import style from "./SearchBar.module.css";
 
 const SearchBar = () => {
   const dispatch = useDispatch();
@@ -12,8 +13,8 @@ const SearchBar = () => {
   };
   return (
     <>
-      <form>
-        <label> Search Country</label>
+      <form className={style.formContainer}>
+        <label> Search Country:</label>
         <input
           type="text"
           placeholder="Country..."

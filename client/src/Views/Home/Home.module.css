@@ -1,18 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
+
 .filtersContainer {
     display: flex;
     flex-direction: row;
     background: rgb(9, 12, 8, 0.9);
     width: 87%;
     justify-content: space-around;
-    color: #4066e2;
+    color: rgba(250,235,215);
     border-radius: 15px;
     margin-bottom: 20px;
     margin-top: 20px;
     border: solid rgba(250,235,215);
     align-items: center;
+    height: 40px;
+    font-family: 'Lora', serif;
+    padding: 15px;
 }
 
 .filters {
     display: flex;
     flex-direction: row;
+}
+
+.homeContainer {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-items: center;
 }
