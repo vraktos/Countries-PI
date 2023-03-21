@@ -7,7 +7,8 @@ const NavBar = () => {
         className={style.button}
         onClick={(e) => {
           e.preventDefault();
-          window.location.href = "http://localhost:3000/";
+          window.location.href =
+            "https://countries-pi-production-c7b2.up.railway.app";
         }}
       >
         {" "}
@@ -17,7 +18,8 @@ const NavBar = () => {
         className={style.button}
         onClick={(e) => {
           e.preventDefault();
-          window.location.href = "http://localhost:3000/home";
+          window.location.href =
+            "https://countries-pi-production-c7b2.up.railway.app/home";
         }}
       >
         {" "}
@@ -27,7 +29,8 @@ const NavBar = () => {
         className={style.button}
         onClick={(e) => {
           e.preventDefault();
-          window.location.href = "http://localhost:3000/create";
+          window.location.href =
+            "https://countries-pi-production-c7b2.up.railway.app/create";
         }}
       >
         {" "}
