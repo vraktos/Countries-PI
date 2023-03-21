@@ -25,7 +25,7 @@ const DetailCard = (props) => {
                 <p>Name: {act.name}</p>
                 <p>Dificulty: {act.dificulty}</p>
                 <p>Duration: {act.duration}</p>
-                <p>Season: {act.Season}</p>
+                <p>Season: {act.season}</p>
               </li>
             );
           })

@@ -42,6 +42,14 @@ const Form = () => {
       duration: durationErr,
       season: seasonErr,
     });
+    if (
+      nameErr === "Name invalid" ||
+      durationErr === "Invalid duration" ||
+      form.duration === "" ||
+      form.season === ""
+    ) {
+      return false;
+    } else return true;
   };
 
   const changeHandler = (e) => {
@@ -65,21 +73,16 @@ const Form = () => {
         });
       }
     }
-    validate({ ...form, [property]: value });
+    // validate({ ...form, [property]: value });
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    validate(form) && console.log(errors);
+    const succesfull = validate(form);
     console.log(errors);
     console.log(form);
 
-    if (
-      errors.name === "" &&
-      errors.dificulty === "" &&
-      errors.duration === "" &&
-      errors.season === ""
-    ) {
+    if (succesfull) {
       console.log("validate succesfull");
       axios
         .post("http://localhost:3001/activities", form)
