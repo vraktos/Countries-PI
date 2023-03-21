@@ -9,7 +9,7 @@ const Form = () => {
   useEffect(() => {
     dispatch(getCountries());
     dispatch(getActivities());
-  }, []);
+  }, [dispatch]);
   const countNames = useSelector((state) => state.countries);
   const activities = useSelector((state) => state.activities).map(
     (act) => act.name

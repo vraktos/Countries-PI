@@ -16,7 +16,7 @@ const Home = () => {
     dispatch(getActivities());
 
     console.log("pasando por home");
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={style.homeContainer}>
