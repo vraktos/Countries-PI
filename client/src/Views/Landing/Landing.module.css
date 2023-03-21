@@ -10,6 +10,7 @@
 }
 
 .homeButton {
+  text-decoration: none;
     display: flex;
     width: 10%;
     justify-content: center;

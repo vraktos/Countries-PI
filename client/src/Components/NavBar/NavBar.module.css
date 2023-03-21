@@ -61,3 +61,8 @@
   filter: brightness(1.1);
   -webkit-filter: brightness(1.1);
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

@@ -85,7 +85,10 @@ const Form = () => {
     if (succesfull) {
       console.log("validate succesfull");
       axios
-        .post("http://localhost:3001/activities", form)
+        .post(
+          "https://countries-pi-production-c7b2.up.railway.app/activities",
+          form
+        )
         .then((res) => alert(res.data))
         .catch((error) => console.log(error.message));
       setForm({
