@@ -9,7 +9,7 @@ const SEARCH_COUNTRY = "SEARCH_COUNTRY";
 
 const getCountries = () => {
   return async function (dispatch) {
-    const apiData = await axios.get("http://localhost:3001/countries");
+    const apiData = await axios.get("/countries");
     const countries = apiData.data;
     dispatch({ type: GET_COUNTRIES, payload: countries });
   };
@@ -17,7 +17,7 @@ const getCountries = () => {
 
 const getActivities = () => {
   return async function (dispatch) {
-    const apiData = await axios.get("http://localhost:3001/activities");
+    const apiData = await axios.get("/activities");
     const activities = apiData.data;
     dispatch({ type: GET_ACTIVITIES, payload: activities });
   };
@@ -36,7 +36,7 @@ const changePage = (page) => {
 };
 const getCountryById = (id) => {
   return async function (dispatch) {
-    const apiData = await axios.get(`http://localhost:3001/countries/${id}`);
+    const apiData = await axios.get(`/countries/${id}`);
     const country = apiData.data;
     dispatch({ type: GET_COUNTRY_ID, payload: country });
   };
@@ -44,9 +44,7 @@ const getCountryById = (id) => {
 
 const searchCountry = (name) => {
   return async function (dispatch) {
-    const apiData = await axios.get(
-      `http://localhost:3001/countries?name=${name}`
-    );
+    const apiData = await axios.get(`/countries?name=${name}`);
     const countries = apiData.data;
     dispatch({ type: SEARCH_COUNTRY, payload: countries });
   };

@@ -4,10 +4,11 @@ const {
   getCountriesFromApi,
   postCountriesController,
 } = require("./src/controllers/countriesControllers");
-
-app.listen(3001, async () => {
+require("dotenv").config();
+const { PORT } = process.env;
+app.listen(PORT, async () => {
   sequelize.sync({ force: true });
   const countries = await getCountriesFromApi();
   await postCountriesController(countries);
-  console.log("server is up on port 3001");
+  console.log(`server is up on port ${PORT}`);
 });
