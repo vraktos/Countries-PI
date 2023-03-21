@@ -1,11 +1,11 @@
 const { Sequelize } = require("sequelize");
 require("dotenv").config();
-const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME } = process.env;
 const CountryModel = require("./models/CountryModel");
 const ActivityModel = require("./models/ActivityModel");
 
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`
 );
 
 CountryModel(sequelize);
