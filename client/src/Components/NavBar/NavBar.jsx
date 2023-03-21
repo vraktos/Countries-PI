@@ -6,16 +6,19 @@ const NavBar = () => {
     <div className={style.navContainer}>
       <button className={style.button}>
         {" "}
-        <Link to="https://countries-pi-production-c7b2.up.railway.app"></Link>{" "}
-        Landing{" "}
+        <Link to="https://countries-pi-production-c7b2.up.railway.app">
+          Landing{" "}
+        </Link>{" "}
       </button>{" "}
       <button className={style.button}>
-        <Link to="https://countries-pi-production-c7b2.up.railway.app/home"></Link>{" "}
-        Home{" "}
+        <Link to="https://countries-pi-production-c7b2.up.railway.app/home">
+          Home{" "}
+        </Link>{" "}
       </button>{" "}
       <button className={style.button}>
-        <Link to="https://countries-pi-production-c7b2.up.railway.app/create"></Link>{" "}
-        Create your Adventure!{" "}
+        <Link to="https://countries-pi-production-c7b2.up.railway.app/create">
+          Create your Adventure!{" "}
+        </Link>{" "}
       </button>{" "}
     </div>
   );

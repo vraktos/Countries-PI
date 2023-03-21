@@ -1,4 +1,5 @@
 import style from "./Landing.module.css";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -6,15 +7,10 @@ const Landing = () => {
       <div className={style.welcome}>
         {" "}
         Welcome to Countries of the World
-        <button
-          className={style.homeButton}
-          onClick={(e) => {
-            e.preventDefault();
-            window.location.href = "http://localhost:3000/home";
-          }}
-        >
-          {" "}
-          Home{" "}
+        <button className={style.homeButton}>
+          <Link to="https://countries-pi-production-c7b2.up.railway.app/home">
+            Home{" "}
+          </Link>{" "}
         </button>{" "}
       </div>
     </div>
