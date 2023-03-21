@@ -85,10 +85,7 @@ const Form = () => {
     if (succesfull) {
       console.log("validate succesfull");
       axios
-        .post(
-          "https://countries-pi-production-c7b2.up.railway.app/activities",
-          form
-        )
+        .post("countries-pi-production-36e3.up.railway.app/activities", form)
         .then((res) => alert(res.data))
         .catch((error) => console.log(error.message));
       setForm({
